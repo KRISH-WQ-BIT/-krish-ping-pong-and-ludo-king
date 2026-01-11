@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krish Gaming Zone - Ping Pong & Ludo</title>
+    <meta name="description" content="Play Ping Pong and Ludo games by Krish. Press / to switch between games!">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Text -->
+    <div class="background-text">KRISH PING PONG</div>
+
+    <!-- Game Container -->
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">🎮 KRISH GAMING ZONE</h1>
+            <p class="game-subtitle">Press <kbd>/</kbd> or click icons to switch games</p>
+            <div class="game-selector">
+                <button class="game-icon-btn active" id="pingPongBtn" data-game="pingPong" title="Play Ping Pong">
+                    <span class="icon">🏓</span>
+                    <span class="game-name">Ping Pong</span>
+                </button>
+                <button class="game-icon-btn" id="ludoBtn" data-game="ludo" title="Play Ludo King">
+                    <span class="icon">🎲</span>
+                    <span class="game-name">Ludo King</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Ping Pong Game -->
+        <div id="pingPongGame" class="game-panel active">
+            <div class="game-info">
+                <div class="game-mode-selector">
+                    <button class="mode-btn active" id="singlePlayerMode">🤖 vs Computer</button>
+                    <button class="mode-btn" id="multiplayerMode">👥 2 Players</button>
+                </div>
+                <div class="score-board">
+                    <div class="score-item">
+                        <span class="score-label" id="player1Label">Player 1</span>
+                        <span class="score-value" id="playerScore">0</span>
+                    </div>
+                    <div class="score-divider"></div>
+                    <div class="score-item">
+                        <span class="score-label" id="player2Label">Computer</span>
+                        <span class="score-value" id="computerScore">0</span>
+                    </div>
+                </div>
+            </div>
+            <canvas id="pongCanvas" width="800" height="500"></canvas>
+            <div class="game-controls">
+                <button class="btn btn-primary" id="startPong">Start Game</button>
+                <button class="btn btn-secondary" id="resetPong">Reset</button>
+                <button class="btn btn-secondary" id="fullscreenBtn">🖥️ Fullscreen</button>
+            </div>
+            <p class="controls-hint" id="pongControls">Player 1: W/S keys | Computer: Auto</p>
+        </div>
+
+        <!-- Ludo Game -->
+        <div id="ludoGame" class="game-panel">
+            <div class="game-info">
+                <div class="ludo-header">
+                    <h2 class="ludo-title">👑 Ludo King</h2>
+                    <div class="current-player-indicator">
+                        <span>Current Turn:</span>
+                        <span class="player-turn" id="currentPlayer">Red</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ludo-container">
+                <canvas id="ludoCanvas" width="600" height="600"></canvas>
+                <div class="ludo-controls">
+                    <div class="dice-container">
+                        <div class="dice" id="dice">
+                            <div class="dice-value" id="diceValue">?</div>
+                        </div>
+                        <button class="btn btn-primary" id="rollDice">Roll Dice</button>
+                    </div>
+                    <div class="player-status">
+                        <div class="status-item red-player">
+                            <div class="player-color red"></div>
+                            <span>Red Player</span>
+                        </div>
+                        <div class="status-item blue-player">
+                            <div class="player-color blue"></div>
+                            <span>Blue Player</span>
+                        </div>
+                        <div class="status-item green-player">
+                            <div class="player-color green"></div>
+                            <span>Green Player</span>
+                        </div>
+                        <div class="status-item yellow-player">
+                            <div class="player-color yellow"></div>
+                            <span>Yellow Player</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" id="resetLudo">New Game</button>
+                </div>
+            </div>
+            <p class="controls-hint">Click on your piece to move after rolling the dice</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
