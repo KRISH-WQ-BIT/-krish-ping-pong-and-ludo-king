@@ -1,2 +1,3 @@
-# -krish-ping-pong-and-ludo
-# -krish-ping-pong-and-ludo-king
+# -krish-ping-pong-and-CHESS
+# -krish-ping-pong-and-CHESS
+
